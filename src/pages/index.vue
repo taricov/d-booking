@@ -1,53 +1,49 @@
 <script setup lang="ts">
 // defineComponents({})
 defineOptions({
-name: 'IndexPage',
+  name: 'IndexPage',
 })
-	const user = useUserStore()
+const user = useUserStore()
 const name = ref(user.savedName)
 
 const router = useRouter()
-	function go() {
-		if (name.value)
-			router.push(`/hi/${encodeURIComponent(name.value)}`)
-	}
+function go() {
+  if (name.value)
+    router.push(`/hi/${encodeURIComponent(name.value)}`)
+}
 
 const { t } = useI18n()
-	</script>
+</script>
 
-	<template>
+<template>
+  <!-- <div class="!text-6xl mx-auto my-20 font-bold flex items-center justify-center">D-Booking</div> -->
+  <div href="#" class="mb-7 inline-flex items-center justify-between rounded-full bg-gray-100 px-4 py-1 text-sm text-gray-700 dark:bg-gray-800 hover:bg-gray-200 dark:text-white dark:hover:bg-gray-700" role="alert">
+    From checkout to global sales tax compliance, companies
+  </div>
 
-	<!-- <div class="!text-6xl mx-auto my-20 font-bold flex items-center justify-center">D-Booking</div> -->
-	<div href="#" class="inline-flex justify-between items-center py-1 px-4 mb-7 text-sm text-gray-700 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700" role="alert">From checkout to global sales tax compliance, companies</div>
+  <div class="option-group">
+    <div class="option-container">
+      <input id="option-1" class="option-input" checked type="radio" name="options">
+      <input id="option-2" class="option-input" type="radio" name="options">
 
-	<div class="option-group">
-	<div class="option-container">
+      <label class="option !bg-gray-800/30" for="option-1">
+        <span class="option__indicator" />
 
-	<input class="option-input" checked id="option-1" type="radio" name="options" />
-	<input class="option-input" id="option-2" type="radio" name="options" />
+        <span class="option__label">
+          <sub class="!text-[0.3em]">One-Time</sub>
+        </span>
+      </label>
 
-	<label class="option !bg-gray-800/30" for="option-1">
-	<span class="option__indicator"></span>
+      <label class="option !bg-gray-800/30" for="option-2">
+        <span class="option__indicator" />
+        <span class="option__label">
+          <sub class="">Range</sub>
+        </span>
+      </label>
+    </div>
+  </div>
 
-	<span class="option__label">
-	<sub class="!text-[0.3em]">One-Time</sub>
-	</span>
-	</label>
-
-	<label class="option !bg-gray-800/30" for="option-2">
-	<span class="option__indicator"></span>
-	<span class="option__label">
-	<sub class="">Range</sub>
-	</span>
-	</label>
-
-	</div>
-	</div>
-
-
-
-
-<!--
+  <!--
 	<div>
 	<div text-4xl>
 	<div i-carbon-campsite inline-block />
@@ -75,22 +71,21 @@ const { t } = useI18n()
 {{ t('button.go') }}
 </button>
 </div>
-</div> 
+</div>
 -->
-<!-- <input :key="i" type="checkbox" for="i in 10" :id=`checkbox_${i}`>{{"checkbox" + i}}</input> -->
-<TheChip />
-<div i-carbon-logo-github/>  
-<div i-carbon-logo-linkedin />
+  <!-- <input :key="i" type="checkbox" for="i in 10" :id=`checkbox_${i}`>{{"checkbox" + i}}</input> -->
+  <TheChip />
+  <div i-carbon-logo-github />
+  <div i-carbon-logo-linkedin />
 
-<div i-carbon-language />
-
-
+  <div i-carbon-language />
 </template>
 
 <route lang="yaml">
 meta:
 layout: home
 </route>
+
 <style scoped>
 html {
 background: linear-gradient(to bottom,#4678F3,#64D6EE);
@@ -241,6 +236,4 @@ visibility: hidden;
  .option-input:nth-child(1):checked ~ .option:nth-of-type(1) .option__label, .option-input:nth-child(1):checked ~ .option:nth-of-type(1) .option__label::after, .option-input:nth-child(2):checked ~ .option:nth-of-type(2) .option__label, .option-input:nth-child(2):checked ~ .option:nth-of-type(2) .option__label::after {
 	 transform: scale(1);
 }
- 
-
 </style>
