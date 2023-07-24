@@ -17,8 +17,7 @@ const localesMap = Object.fromEntries(
     .map(([path, loadLocale]) => [path.match(/([\w-]*)\.yml$/)?.[1], loadLocale]),
 ) as Record<Locale, () => Promise<{ default: Record<string, string> }>>
 
-export const availableLocales = Object.keys(localesMap)
-
+export const availableLocales = Object.keys(localesMap).filter((x: string) => x === 'ar' || x === 'en')
 const loadedLanguages: string[] = []
 
 function setI18nLanguage(lang: Locale) {
