@@ -1,9 +1,10 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
-  '@unhead/vue':
-    specifier: ^1.1.27
-    version: 1.1.27(vue@3.3.4)
   '@unocss/reset':
     specifier: ^0.52.2
     version: 0.52.2
@@ -48,6 +49,9 @@ devDependencies:
   '@types/nprogress':
     specifier: ^0.2.0
     version: 0.2.0
+  '@unhead/vue':
+    specifier: ^1.1.27
+    version: 1.1.27(vue@3.3.4)
   '@unocss/eslint-config':
     specifier: ^0.52.2
     version: 0.52.2(eslint@8.41.0)(typescript@5.0.4)
